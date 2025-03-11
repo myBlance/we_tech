@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #003875; /* Màu chính */
+    --secondary-color: #2B4E9B; /* Màu phụ */
+    --three-color: #1B154B; /* Màu phụ 2 */
+
+    --text-color: #111; /* Màu chữ */
+    --text-hover-color: #ff6600; /* Màu chữ khi hover */
+    --bg-color: white; /* Màu nền */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 1920px;
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+    
+}
+
+/* Navbar */
+
+header {
+    background: #ffffff;
+    padding: 0px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+    height: 190px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.menu-contact{
+    background-color: #1a1a4e;
+    color: #ffffff;
+    height: 65px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 250px;
+    width: 100%;
+}
+
+.menu-contact .box {
+    background: #1a1a4e;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu{
+    max-width: 1200px;
+    margin: 35px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Navigation */
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #1a1a4e;
+    font-weight: bold;
+}
+
+.nav ul li a:hover {
+    color: #ff6600;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.nav ul .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -35px;
+    background: none;
+    list-style: none;
+    padding: 10px;
+    min-width: 200px;
+    z-index: 100;
+}
+
+.nav ul .submenu li {
+    padding: 8px 10px;
+    align-items: center;
+}
+
+.nav ul .submenu li a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav ul .submenu li:hover {
+    background: #666;
+}
+
+/* Khi mở submenu */
+.nav ul .submenu.active {
+    display: block;
+}
+
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-outline {
+    padding: 8px 15px;
+    border: 2px solid #111;
+    background: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.btn-outline:hover {
+    background: #111;
+    color: white;
+}
+
+.btn-solid {
+    padding: 8px 15px;
+    background: #111;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+}
+
+.btn-solid:hover {
+    background: #ff6600;
+}
+
+/* Banner */
+.banner {
+    background: #ccc;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.featured {
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    max-width: 100%;
+    
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%; /* 2 slide, mỗi slide chiếm 100% */
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+.slide {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    grid-template-rows: repeat(2, auto); /* 2 hàng */
+    gap: 15px;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.card {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background: #ccc;
+}
+
+/* Thanh điều hướng */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 30px;
+    height: 4px;
+    background: #ccc;
+    margin: 0 5px;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: black;
+    transform: scale(1.2);
+}
