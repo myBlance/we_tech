@@ -47,3 +47,35 @@ function moveToSlide(index) {
     currentIndex = index;
 }
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".review-track");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+
+    const cardWidth = document.querySelector(".review-card").offsetWidth + 20; // Tính cả margin
+    let index = 0;
+    const totalCards = document.querySelectorAll(".review-card").length;
+    const visibleCards = 3;
+
+    // Khi nhấn nút Next
+    nextBtn.addEventListener("click", () => {
+        if (index < totalCards - visibleCards) {
+            index++;
+        } else {
+            index = 0; // Quay lại card đầu tiên
+        }
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+
+    // Khi nhấn nút Prev
+    prevBtn.addEventListener("click", () => {
+        if (index > 0) {
+            index--;
+        } else {
+            index = totalCards - visibleCards; // Quay lại card cuối cùng
+        }
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+    });
+});

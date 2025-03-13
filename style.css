@@ -2,7 +2,6 @@
     --primary-color: #003875; /* Màu chính */
     --secondary-color: #2B4E9B; /* Màu phụ */
     --three-color: #1B154B; /* Màu phụ 2 */
-
     --text-color: #111; /* Màu chữ */
     --text-hover-color: #ff6600; /* Màu chữ khi hover */
     --bg-color: white; /* Màu nền */
@@ -178,7 +177,7 @@ header {
     padding: 20px;
 }
 
-.container {
+.featured-container {
     position: relative;
     max-width: 100%;
     
@@ -189,6 +188,7 @@ header {
     width: 100%; /* 2 slide, mỗi slide chiếm 100% */
     transition: transform 0.5s ease-in-out;
     gap: 20px;
+    transform: translateX(0%);
 }
 
 .slide {
@@ -224,13 +224,518 @@ header {
     width: 30px;
     height: 4px;
     background: #ccc;
-    margin: 0 5px;
+    margin: 25px 5px;
     border-radius: 2px;
-    transition: background 0.3s, transform 0.3s;
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
 .dot.active {
     background: black;
     transform: scale(1.2);
+}
+
+/* Section About */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ảnh đại diện */
+.about-image {
+    width: 45%;
+    background: #4a4a4a;
+    height: 250px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Card thống kê */
+.stats-card {
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat h2 {
+    margin: 0;
+    color: #191970;
+}
+
+.stat p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Nội dung */
+.about-content {
+    width: 50%;
+    margin-left: 40px;
+}
+
+.about-content h5 {
+    color: #191970;
+    margin-bottom: 5px;
+}
+
+.about-content h2 {
+    font-size: 26px;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.about-content ul li i {
+    color: #191970;
+    margin-right: 8px;
+}
+
+/* Nút Learn More */
+.learn-more {
+    background: #191970;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.learn-more:hover {
+    background: #2c2c7a;
+}
+
+/* Section My Course */
+.course-section {
+    margin: 0 5%;
+    padding: 40px;
+    text-align: left;
+}
+
+.course-section h2 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+/* Bố cục container */
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Card khóa học */
+.course-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ảnh khóa học */
+.course-image {
+    height: 150px;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-image i {
+    font-size: 30px;
+    color: #666;
+}
+
+/* Nội dung */
+.course-content {
+    padding: 15px;
+}
+
+.course-content h3 {
+    font-size: 18px;
+    color: #111;
+    margin: 5px 0;
+}
+
+.course-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Avatar */
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.author span {
+    font-size: 14px;
+    color: #111;
+}
+
+/* Đánh giá sao */
+.rating {
+    font-size: 14px;
+    color: #f39c12;
+}
+
+
+/* Section support*/
+.support-section {
+    margin-left: 15%;
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.support-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+
+.text-content {
+    max-width: 350px;
+}
+
+.text-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5a5a5a;
+    margin-bottom: 8px;
+}
+
+.text-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.text-content p {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+}
+
+
+.support-btn {
+    background: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.support-btn:hover {
+    background: #333;
+}
+
+
+.satisfaction {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #666;
+    margin-right: 5px;
+}
+
+.satisfaction p {
+    font-size: 14px;
+    color: #5a5a5a;
+}
+
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.service-cards .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.service-cards .card h3 {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+.service-cards .card p {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 15px;
+}
+
+
+.service-cards .card a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.service-cards .card a:hover {
+    text-decoration: underline;
+}
+
+.service-cards .card:nth-child(2) {
+    border-bottom: 4px solid #1a1a1a;
+}
+
+
+/* Container review */
+.review-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f9f9f9;
+}
+
+.review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.review-wrapper {
+    overflow: hidden;
+    width: 80%;
+}
+
+.review-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-right: 10px;
+}
+
+.user-details h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gray-box {
+    width: 60px;
+    height: 15px;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: black;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #1a1742;
+    color: white;
+    padding: 40px 0;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 23%;
+}
+
+.footer-column h3 {
+    border-bottom: 2px solid #666;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-column p, 
+.footer-column ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff8c00;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background-color: #12102b;
+    font-size: 14px;
 }
