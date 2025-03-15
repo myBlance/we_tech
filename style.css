@@ -3,8 +3,9 @@
     --secondary-color: #2B4E9B; /* Màu phụ */
     --three-color: #1B154B; /* Màu phụ 2 */
     --text-color: #111; /* Màu chữ */
+    --text-color-secondary:#fff;
     --text-hover-color: #ff6600; /* Màu chữ khi hover */
-    --bg-color: white; /* Màu nền */
+    --bg-color: #f5f5f5; /* Màu nền */
 }
 
 
@@ -14,15 +15,12 @@ body {
     padding: 0;
     box-sizing: border-box;
     max-width: 1920px;
-    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
-    
+    overflow-x: hidden; 
+    background-color: var(--bg-color);
 }
 
 /* Navbar */
-
 header {
-    background: #ffffff;
-    padding: 0px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,12 +29,12 @@ header {
 .container{
     height: 190px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
 }
 
 .menu-contact{
-    background-color: #1a1a4e;
-    color: #ffffff;
+    background-color: var(--three-color);
+    color: var(--text-color-secondary);
     height: 65px;
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -45,7 +43,7 @@ header {
 }
 
 .menu-contact .box {
-    background: #1a1a4e;
+    background: var(--three-color);
     padding: 20px;
     text-align: center;
 }
@@ -76,12 +74,12 @@ header {
 .nav ul li a {
     text-decoration: none;
     font-size: 16px;
-    color: #1a1a4e;
+    color: var(--three-color);
     font-weight: bold;
 }
 
 .nav ul li a:hover {
-    color: #ff6600;
+    color: var(--text-hover-color);
 }
 
 .nav ul {
@@ -104,6 +102,7 @@ header {
     padding: 10px;
     min-width: 200px;
     z-index: 100;
+    background-color: var(--bg-color);
 }
 
 .nav ul .submenu li {
@@ -112,12 +111,12 @@ header {
 }
 
 .nav ul .submenu li a {
-    color: var(--text-color);
+    color: var(--three-color);
     text-decoration: none;
 }
 
-.nav ul .submenu li:hover {
-    background: #666;
+.nav ul .submenu li a:hover {
+    color: var(--text-hover-color);
 }
 
 /* Khi mở submenu */
@@ -134,22 +133,22 @@ header {
 
 .btn-outline {
     padding: 8px 15px;
-    border: 2px solid #111;
-    background: white;
+    border: 2px solid var(--three-color);
+    background: var(--bg-color);
     font-size: 14px;
     cursor: pointer;
     border-radius: 20px;
 }
 
 .btn-outline:hover {
-    background: #111;
-    color: white;
+    background: var(--three-color);
+    color: var(--text-hover-color);
 }
 
 .btn-solid {
     padding: 8px 15px;
-    background: #111;
-    color: white;
+    background: var(--three-color);
+    color: var(--bg-color);
     font-size: 14px;
     cursor: pointer;
     border-radius: 20px;
@@ -157,21 +156,48 @@ header {
 }
 
 .btn-solid:hover {
-    background: #ff6600;
+    background: var(--text-hover-color);
 }
 
 /* Banner */
 .banner {
-    background: #ccc;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 650px;
 }
 
+.swiper-slide img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.swiper-pagination {
+    margin-bottom: 50px;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    
+    opacity: 1;
+}
+
+
+/* Featured */
 .featured {
     text-align: center;
     padding: 20px;
@@ -200,18 +226,95 @@ header {
     flex-shrink: 0;
 }
 
+/* Card tổng */
 .card {
+    width: 320px;
+    border-radius: 10px;
+    overflow: hidden;
     background: white;
-    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
     border: 1px solid #ddd;
-    text-align: center;
 }
 
-.image-placeholder {
+/* Ảnh trên cùng */
+.card-img {
     width: 100%;
-    height: 150px;
-    background: #ccc;
+    height: 180px;
+    object-fit: cover;
 }
+
+/* Nội dung card */
+.card-body {
+    padding: 16px;
+}
+
+/* Tiêu đề */
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #002D62; /* Màu xanh đậm */
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* Mô tả */
+.card-desc {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Giá */
+.card-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #002D62;
+    margin-bottom: 10px;
+}
+
+/* Hành động */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Link Chi tiết */
+.card-detail {
+    font-size: 12px;
+    text-decoration: none;
+    color: #002D62;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.card-detail::before {
+    content: "→ ";
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* Nút Đăng Ký */
+.card-btn {
+    background-color: #002D62;
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-btn:hover {
+    background-color: #004aad;
+}
+
 
 /* Thanh điều hướng */
 .slider-indicators {
@@ -257,7 +360,7 @@ header {
 /* Ảnh đại diện */
 .about-image {
     width: 45%;
-    background: #4a4a4a;
+    background-image:url(./assets/images/d5.jpg);
     height: 250px;
     border-radius: 10px;
     position: relative;
@@ -347,103 +450,6 @@ header {
     background: #2c2c7a;
 }
 
-/* Section My Course */
-.course-section {
-    margin: 0 5%;
-    padding: 40px;
-    text-align: left;
-}
-
-.course-section h2 {
-    font-size: 24px;
-    color: #111;
-    margin-bottom: 20px;
-}
-
-/* Bố cục container */
-.course-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Card khóa học */
-.course-card {
-    background: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.course-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Ảnh khóa học */
-.course-image {
-    height: 150px;
-    background: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.course-image i {
-    font-size: 30px;
-    color: #666;
-}
-
-/* Nội dung */
-.course-content {
-    padding: 15px;
-}
-
-.course-content h3 {
-    font-size: 18px;
-    color: #111;
-    margin: 5px 0;
-}
-
-.course-content p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* Footer */
-.course-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
-}
-
-/* Avatar */
-.author {
-    display: flex;
-    align-items: center;
-}
-
-.author img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 8px;
-}
-
-.author span {
-    font-size: 14px;
-    color: #111;
-}
-
-/* Đánh giá sao */
-.rating {
-    font-size: 14px;
-    color: #f39c12;
-}
-
 
 /* Section support*/
 .support-section {
@@ -503,24 +509,56 @@ header {
 }
 
 
+/* Tổng thể phần hiển thị */
 .satisfaction {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    gap: 10px;
+    margin: 20px 50px 0 -100px;
 }
 
+/* Nhóm chứa các hình tròn (xếp ngang) */
+.circle-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Container của từng hình tròn */
 .circle {
-    width: 14px;
-    height: 14px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: #666;
-    margin-right: 5px;
+    overflow: hidden;
+    border: 3px solid #1a1a50; /* Viền xanh đậm */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+}
+
+/* Hình ảnh trong hình tròn */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Khoảng cách giữa các hình tròn (để chồng lên nhau một chút) */
+.circle:not(:first-child) {
+    margin-left: -15px;
 }
 
 .satisfaction p {
-    font-size: 14px;
-    color: #5a5a5a;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 10px;
 }
+
 
 
 .service-cards {
@@ -578,102 +616,102 @@ header {
 /* Container review */
 .review-section {
     text-align: center;
-    padding: 50px;
-    background-color: #f9f9f9;
+    padding: 40px 20px;
 }
 
+/* Container chứa slider */
 .review-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     position: relative;
-    max-width: 900px;
-    margin: auto;
-    overflow: hidden;
+    margin: 20px;
+    
 }
 
+/* Wrapper chứa các review */
 .review-wrapper {
+    width: 800px; /* Đảm bảo hiển thị đúng 3 thẻ */
     overflow: hidden;
-    width: 80%;
 }
 
+/* Track chứa tất cả review */
 .review-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    display: flex; 
+    gap: 30px;
+    margin: 50px 0;
+    transition: transform 0.4s ease-in-out;
 }
 
+/* Card review */
 .review-card {
+    width: 200px;
     background: white;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 10px;
-    width: 280px;
-    flex-shrink: 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+    opacity: 0.7;
+    flex-shrink: 0; /* Giữ nguyên kích thước khi trượt */
+    text-align: left;
 }
 
+/* Card chính giữa lớn hơn */
+.review-card.active {
+    transform: scale(1.2);
+    border-radius: 10px;
+    opacity: 1;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Thông tin người dùng */
 .user-info {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    gap: 10px;
 }
 
 .avatar {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: gray;
-    margin-right: 10px;
+    background: #ccc;
 }
 
-.user-details h4 {
-    margin: 0;
-    font-size: 16px;
-    color: #333;
-}
-
+/* Nội dung review */
 .review-text {
     font-size: 14px;
-    color: #555;
-    margin: 10px 0;
+    margin-top: 10px;
+    color: #444;
 }
 
-.review-footer {
+.user-meta {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px; /* Khoảng cách giữa nghề nghiệp và sao */
 }
 
-.gray-box {
-    width: 60px;
-    height: 15px;
-    background-color: lightgray;
-    border-radius: 5px;
+.rating {
+    color: #ffcc00; /* Màu vàng cho sao */
+    font-size: 16px;
+    white-space: nowrap; /* Tránh xuống dòng */
 }
 
+
+/* Nút điều hướng */
 .prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: none;
     border: none;
     font-size: 24px;
-    color: #555;
     cursor: pointer;
-    transition: 0.3s;
-    z-index: 10;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
+    padding: 10px;
+    color: #1a1a50;
 }
 
 .prev-btn:hover, .next-btn:hover {
-    color: black;
+    color: #ffcc00;
 }
 
 

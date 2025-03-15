@@ -1,15 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    new Swiper(".mySwiper", {
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        autoplay: {
-            delay: 3000,
-        },
+  document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".mySwiper", {
+      loop: true, // Cho phép lặp vô hạn
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true, // Cho phép click vào dấu tròn để chuyển slide
+      },
+      autoplay: {
+        delay: 3000, // Slide tự động chạy sau 3 giây
+        disableOnInteraction: false, // Dừng khi tương tác
+      },
     });
-});
+  });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const submenus = document.querySelectorAll(".has-submenu");
@@ -48,34 +51,43 @@ function moveToSlide(index) {
 }
 
 
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const reviewTrack = document.querySelector(".review-track");
+const reviews = document.querySelectorAll(".review-card");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const track = document.querySelector(".review-track");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
+let index = 1; // Bắt đầu ở thẻ thứ 2 (giữa)
+const cardWidth = reviews[0].offsetWidth + 20; // Kích thước thẻ + khoảng cách
 
-    const cardWidth = document.querySelector(".review-card").offsetWidth + 20; // Tính cả margin
-    let index = 0;
-    const totalCards = document.querySelectorAll(".review-card").length;
-    const visibleCards = 3;
-
-    // Khi nhấn nút Next
-    nextBtn.addEventListener("click", () => {
-        if (index < totalCards - visibleCards) {
-            index++;
+function updateActiveCard() {
+    reviews.forEach((card, i) => {
+        if (i === index) {
+            card.classList.add("active");
         } else {
-            index = 0; // Quay lại card đầu tiên
+            card.classList.remove("active");
         }
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
     });
 
-    // Khi nhấn nút Prev
-    prevBtn.addEventListener("click", () => {
-        if (index > 0) {
-            index--;
-        } else {
-            index = totalCards - visibleCards; // Quay lại card cuối cùng
-        }
-        track.style.transform = `translateX(-${index * cardWidth}px)`;
-    });
+    
+    // Cập nhật vị trí của track
+    reviewTrack.style.transform = `translateX(-${(index - 1) * cardWidth}px)`;
+}
+
+
+
+nextBtn.addEventListener("click", () => {
+    if (index < reviews.length - 2) { // Luôn giữ 3 thẻ trên màn hình
+        index++;
+        updateActiveCard();
+    }
 });
+
+prevBtn.addEventListener("click", () => {
+    if (index > 1) {
+        index--;
+        updateActiveCard();
+    }
+});
+
+// Set mặc định thẻ ở giữa to hơn
+updateActiveCard();
