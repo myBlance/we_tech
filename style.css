@@ -1,16 +1,29 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/Roboto-Italic-VariableFont_wdth\,wght.ttf') format('opentype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/Roboto-VariableFont_wdth\,wght.ttf') format('opentype');
+    font-style: normal;
+}
+
+
 :root {
     --primary-color: #003875; /* Màu chính */
     --secondary-color: #2B4E9B; /* Màu phụ */
     --three-color: #1B154B; /* Màu phụ 2 */
+    --bg-color: #f5f5f5; /* Màu nền */
     --text-color: #111; /* Màu chữ */
     --text-color-secondary:#fff;
     --text-hover-color: #ff6600; /* Màu chữ khi hover */
-    --bg-color: #f5f5f5; /* Màu nền */
 }
 
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'MyCustomFont', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -167,12 +180,62 @@ header {
     height: 650px;
 }
 
+.swiper-slide {
+    position: relative;
+    text-align: center;
+}
+
 .swiper-slide img {
     width: 100%;
     height: 600px;
     object-fit: cover;
 }
 
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    width: 80%;
+    max-width: 800px;
+}
+
+.banner-text h2 {
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+
+.banner .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner .buttons button {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 180px;
+    text-align: center;
+}
+
+.banner .buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Điều chỉnh vị trí của pagination */
 .swiper-pagination {
     position: absolute;
     bottom: 20px;
@@ -192,9 +255,9 @@ header {
 }
 
 .swiper-pagination-bullet-active {
-    
     opacity: 1;
 }
+
 
 
 /* Featured */
@@ -714,6 +777,45 @@ header {
     color: #ffcc00;
 }
 
+/* Contact section */
+.contact-section {
+    position: relative;
+    background-image: url('handshake.jpg'); /* Thay bằng ảnh thực tế */
+    background-size: cover;
+    background-position: center;
+    height: 250px; /* Điều chỉnh tùy theo nhu cầu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: white;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+}
 
 /* Footer Styles */
 footer {
