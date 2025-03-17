@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const submenu = menu.querySelector(".submenu");
 
         menu.addEventListener("click", function (event) {
-            event.preventDefault(); // Ngăn chặn nhảy trang khi click vào link
+             // Ngăn chặn nhảy trang khi click vào link
             submenu.classList.toggle("active"); // Bật/tắt menu con
         });
 

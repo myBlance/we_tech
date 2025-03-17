@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/Roboto-Italic-VariableFont_wdth\,wght.ttf') format('opentype');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/Roboto-VariableFont_wdth\,wght.ttf') format('opentype');
+    font-style: normal;
+}
+
+
+:root {
+    --primary-color: #003875; /* Màu chính */
+    --secondary-color: #2B4E9A; /* Màu phụ */
+    --three-color: #1B154B; /* Màu phụ 2 */
+    --bg-color: #f5f5f5; /* Màu nền */
+    --text-color: #111; /* Màu chữ */
+    --text-color-secondary:#fff;
+    --text-hover-color: #ff6600; /* Màu chữ khi hover */
+}
+
+
+
+body {
+    font-family: 'MyCustormFont', sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 100%;
+    margin: auto;
+}
+h1 {
+    color: #1a1a1a;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px  0 0;
+}
+.buttons button {
+    width: 320px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.buttons button.active {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 7%;
+    margin-top: 20px;
+    justify-content:left;
+}
+
+.card {
+    width: 300px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--bg-color);
+    margin-top: 40px;
+    
+}
+
+/* Ảnh trên cùng */
+.card-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid var(--text-color);
+}
+
+/* Nội dung card */
+.card-body {
+    padding: 16px;
+    text-align: left;
+}
+
+/* Tiêu đề */
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--three-color);
+    margin-bottom: 6px;
+    line-height: 1.4;
+    
+}
+
+/* Mô tả */
+.card-desc {
+    font-size: 12px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Giá tiền và "Chi tiết" nằm ngang */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+/* Giá tiền */
+.card-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1445;
+    display: flex;
+    align-items: center;
+}
+
+/* Định dạng đơn vị tiền tệ */
+.card-price sup {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+/* Nút "Chi tiết" */
+.card-detail {
+    font-size: 14px;
+    color: #1a1445;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.card-detail::before {
+    content: "→";
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.card-detail::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #1a1445;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.card-detail:hover::after {
+    width: 100%;
+}
