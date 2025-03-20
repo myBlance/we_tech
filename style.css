@@ -67,10 +67,12 @@ header {
     align-items: center;
     gap: 10px;
     margin-left: 250px;
+    height: auto;
+    white-space: nowrap;
 }
 
 .menu-contact .box img{
-    width: 30px;
+    max-width: 30px;
     height: auto;
 }
 
@@ -328,21 +330,25 @@ header {
     padding: 20px;
     background-color: var(--bg-color);
 }
+.featured h2{
+    font-size: 60;
+    font-weight:bold;
+}
 
 .featured-container {
     position: relative;
     max-width: 100%;
     margin-top: 50px;
     margin-left: 50px;
-   
+    overflow: hidden;
     
 }
 
 .slider-wrapper {
     display: flex;
-    width: 100%; /* 2 slide, mỗi slide chiếm 100% */
+    width: 300%; 
     transition: transform 0.5s ease-in-out;
-    gap: 50px;
+    gap: 2880px;
     transform: translateX(0%);
 }
 
@@ -351,9 +357,8 @@ header {
     grid-template-columns: repeat(4, 1fr); /* 4 cột */
     grid-template-rows: repeat(2, auto); /* 2 hàng */
     gap: 70px;
-    width: 100%;
+    max-width: 100%;
     flex-shrink: 0;
-    
 }
 
 
@@ -363,7 +368,6 @@ header {
     overflow: hidden;
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
     border: 1px solid var(--bg-color);
 }
 
@@ -387,14 +391,18 @@ header {
     color: var(--three-color); /* Màu xanh đậm */
     margin-bottom: 6px;
     line-height: 1.4;
+    height: 30px;
+    text-align: left;
 }
 
 /* Mô tả */
 .card-desc {
+    height: 40px;
     font-size: 12px;
     color: var(--text-color);
     margin-bottom: 10px;
     line-height: 1.5;
+    text-align: left;
 }
 
 .card-info {
@@ -464,7 +472,7 @@ header {
     background-color: #214698;
     border: none;
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 12px 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -687,7 +695,6 @@ header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family: Arial, sans-serif;
     gap: 10px;
     margin: 20px 50px 0 -150px;
 }
@@ -964,7 +971,7 @@ h2 {
 footer {
     background-color: var(--three-color);
     color: white;
-    padding: 40px 0;
+    padding: 60px 0;
     text-align: left;
 }
 
@@ -972,7 +979,7 @@ footer {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    margin-left: 15%;
+    margin-left: 13%;
     flex-wrap: wrap;
 }
 
