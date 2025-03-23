@@ -1,0 +1,144 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #555;
+}
+
+/* Container chính */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Phần bên trái chứa logo và slogan */
+.left-section {
+    flex: 1;
+    background: #555;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: left;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    opacity: 0.6; /* Điều chỉnh độ mờ từ 0.1 đến 1 (1 là rõ nhất) */
+    
+}
+
+.left-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Dots chuyển đổi */
+.dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa các gạch */
+    margin-top: 40px;
+}
+
+.dot {
+    width: 20px;  /* Độ dài của gạch ngang */
+    height: 4px;  /* Độ dày của gạch ngang */
+    background-color: #ccc; /* Màu của gạch */
+    border-radius: 2px; /* Bo tròn góc nhẹ */
+    transition: background-color 0.3s ease; /* Hiệu ứng màu */
+}
+
+
+.dot.active, .dot:hover {
+    background: #fff;
+}
+
+/* Phần đăng nhập */
+.login-box {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.login-box a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 20px 0 40px;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+/* Input và button */
+.login-box input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* OR Line */
+.or {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Button Google */
+.google-login {
+    background: white;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+.google-login:hover {
+    background: #f5f5f5;
+}

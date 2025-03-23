@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="styles_login.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div>
+                <img src="/assets/images/logowt1.png" alt="WE-TECH Logo" class="logo">  
+            </div>
+            <div>
+                <h2>Giải Pháp Vượt Trội...</h2>
+                <p>Sự hài lòng của Quý khách hàng chính là động lực để chúng tôi không ngừng cải tiến và nâng cao chất lượng dịch vụ.</p>
+            </div>
+            <div class="dots-container">
+                <div class="dot active" onclick="redirectTo('login.html')"></div>
+                <div class="dot" onclick="redirectTo('register.html')"></div>
+            </div>
+        </div>
+        
+        <div class="login-box">
+            <h2>Đăng Nhập</h2>
+            <p>Bạn chưa có tài khoản? <a href="#">Đăng Ký</a></p>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <a href="#">Quên mật khẩu?</a>
+                <button type="submit">Đăng Nhập</button>
+                <div class="or">or</div>
+                <button class="google-login">Đăng nhập với Google</button>
+            </form>
+        </div>
+    </div>
+    <script src="./script_login.js"></script>
+</body>
+</html>
