@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="styles_register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div>
+                <img src="/assets/images/logowt1.png" alt="WE-TECH Logo" class="logo">  
+            </div>
+            <div>
+                <h1>Chuyên Nghiệp Dẫn Đầu</h1>
+                <p>We-tech tự hào đồng hành cùng quý khách hàng trên hành trình phát triển bền vững.</p>
+            </div>
+            <div class="dots-container">
+                <div class="dot" onclick="redirectTo('/login/login.html')"></div>
+                <div class="dot active" onclick="redirectTo('register.html')"></div>
+            </div>
+        </div>
+        
+        <div class="register-box">
+            <h2>Đăng Ký</h2>
+            <p>Bạn đã có tài khoản? <a href="/login/login.html">Đăng Nhập</a></p>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <div class="name-fields">
+                    <input type="text" placeholder="Tên" required>
+                    <input type="text" placeholder="Họ" required>
+                </div>
+                <input type="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng Ký</button>
+                <div class="or">or</div>
+                <button class="google-login">Đăng nhập với Google <img src="google-icon.png" alt="Google"></button>
+                <div class="terms">
+                    <input type="checkbox" required> By clicking Create account, I agree that I have read and accepted the Terms of Use and Privacy Policy.
+                </div>
+                <p class="footer">Protected by reCAPTCHA and subject to the Prism Privacy Policy and Terms of Service.</p>
+            </form>
+        </div>
+    </div>
+    <script src="./script_register.js"></script>
+</body>
+</html>

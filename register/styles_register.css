@@ -1,0 +1,195 @@
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    background: rgba(255, 255, 255, 0.9); /* Nền trắng với độ trong suốt */
+    background: url('/assets/images/a0.jpg') center/cover no-repeat;
+}
+
+/* Container chính */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Phần bên trái */
+.left-section {
+    flex: 1;
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+    opacity: 0; /* Điều chỉnh độ mờ từ 0.1 đến 1 (1 là rõ nhất) */
+}
+
+.left-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa các gạch */
+    margin-top: 40px;
+}
+
+.dot {
+    width: 20px;  
+    height: 4px;  
+    background-color: #ccc; 
+    border-radius: 2px; 
+    transition: background-color 0.3s ease; 
+}
+
+
+.dot.active, .dot:hover {
+    background: #fff;
+}
+
+/* Hộp đăng ký */
+.register-box {
+    flex: 1;
+    padding: 40px;
+    text-align: left;
+    background: white;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.register-box h2 {
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.register-box p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.register-box a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-box a:hover {
+    text-decoration: underline;
+}
+
+/* Form nhập liệu */
+.register-box form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-box input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Nhập họ và tên */
+.name-fields {
+    display: flex;
+    gap: 12px;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+/* Nút đăng ký */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.or {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Đăng nhập Google */
+.google-login {
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.google-login img {
+    width: 18px;
+    margin-left: 8px;
+}
+
+/* Điều khoản sử dụng */
+.terms {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start; /* Đưa checkbox lên đỉnh của văn bản */
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    max-width: 400px; /* Điều chỉnh độ rộng nếu cần */
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 8px; /* Tạo khoảng cách giữa checkbox và văn bản */
+    width: 16px;
+    height: 16px;
+    margin-top: 0px; /* Đẩy checkbox lên để ngang với dòng đầu */
+}
+
+.footer {
+    border-top: 1px solid #555;
+    padding-top: 40px;
+    text-align: center;
+   
+}

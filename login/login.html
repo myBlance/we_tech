@@ -18,23 +18,47 @@
                 <p>Sự hài lòng của Quý khách hàng chính là động lực để chúng tôi không ngừng cải tiến và nâng cao chất lượng dịch vụ.</p>
             </div>
             <div class="dots-container">
-                <div class="dot active" onclick="redirectTo('login.html')"></div>
-                <div class="dot" onclick="redirectTo('register.html')"></div>
+                <div class="dot active" onclick="redirectTo('/login/login.html')"></div>
+                <div class="dot" onclick="redirectTo('/register/register.html')"></div>
             </div>
         </div>
         
         <div class="login-box">
             <h2>Đăng Nhập</h2>
-            <p>Bạn chưa có tài khoản? <a href="#">Đăng Ký</a></p>
+            <p>Bạn chưa có tài khoản? <a href="/register/register.html">Đăng Ký</a></p>
             <form>
                 <input type="email" placeholder="Email" required>
                 <input type="password" placeholder="Mật khẩu" required>
-                <a href="#">Quên mật khẩu?</a>
+                <a href="#" onclick="showForgotPasswordForm()">Quên mật khẩu?</a>
                 <button type="submit">Đăng Nhập</button>
                 <div class="or">or</div>
                 <button class="google-login">Đăng nhập với Google</button>
             </form>
+            <p class="footer">Protected by reCAPTCHA and subject to the Prism Privacy Policy and Terms of Service.</p>
         </div>
+
+        <div class="forgot-password-box" id="forgot-password-box" style="display: none;">
+            <h2>Quên Mật Khẩu?</h2>
+            <p>Đừng lo lắng! Chỉ cần nhập email của bạn và chúng tôi sẽ gửi cho bạn liên kết đặt lại mật khẩu.</p>
+            <form>
+                <input type="email" placeholder="Email" required>
+                <button type="submit" onclick="showResetPasswordForm(event)">Gửi Email Khôi Phục</button>
+            </form>
+            <p><a href="#" onclick="showLoginForm()">Trở lại Đăng nhập</a></p>
+            <p class="footer">Tạo mới? <a href="/register/register.html">Đăng Ký</a></p>
+        </div>
+
+        <div class="reset-password-box" id="reset-password-box" style="display: none;">
+            <h2>Đổi Mật Khẩu</h2>
+            <p>Vui lòng tạo mật khẩu mới</p>
+            <form>
+                <input type="password" placeholder="Mật khẩu mới" required>
+                <input type="password" placeholder="Nhập lại mật khẩu mới" required>
+                <button type="submit">Gửi Xác Nhận Email</button>
+            </form>
+            <p class="footer">Tạo mới? <a href="/register/register.html">Đăng Ký</a></p>
+        </div>
+        
     </div>
     <script src="./script_login.js"></script>
 </body>
