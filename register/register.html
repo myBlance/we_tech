@@ -31,10 +31,17 @@
                     <input type="text" placeholder="Tên" required>
                     <input type="text" placeholder="Họ" required>
                 </div>
-                <input type="password" placeholder="Mật khẩu" required>
+
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Mật khẩu" required>
+                    <span class="eye-icon" onclick="togglePassword()">
+                        <img id="eye-icon" src="/assets/images/eyeclose.png" alt="Ẩn">
+                    </span>
+                </div>
+                
                 <button type="submit">Đăng Ký</button>
                 <div class="or">or</div>
-                <button class="google-login">Đăng nhập với Google <img src="google-icon.png" alt="Google"></button>
+                <button class="google-login">Đăng nhập với Google <img src="/assets/images/Google__G__logo.svg.webp" alt="Google"></button>
                 <div class="terms">
                     <input type="checkbox" required> By clicking Create account, I agree that I have read and accepted the Terms of Use and Privacy Policy.
                 </div>

@@ -13,9 +13,8 @@ body {
 .container {
     display: flex;
     width: 80%;
+    height: 85%;
     max-width: 1000px;
-    background: white;
-    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -23,7 +22,6 @@ body {
 .left-section {
     flex: 1;
     background: #555;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,37 +69,39 @@ body {
 }
 
 /* Phần đăng nhập */
-.login-box {
+.right-container{
     flex: 1;
+    border-radius: 8px;
+    background: white;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.login-box h2 {
+h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
-.login-box p {
+p {
     font-size: 14px;
     margin-bottom: 20px;
 }
 
-.login-box a {
+a {
     color: #007bff;
     text-decoration: none;
     margin: 20px 0 40px;
 }
 
-.login-box a:hover {
+a:hover {
     text-decoration: underline;
 }
 
-/* Input và button */
-.login-box input {
-    width: 95%;
+
+input {
+    width: 94%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -124,7 +124,7 @@ button:hover {
     background: #0056b3;
 }
 
-/* OR Line */
+
 .or {
     text-align: center;
     margin: 15px 0;
@@ -132,97 +132,55 @@ button:hover {
     color: #777;
 }
 
-/* Button Google */
+
 .google-login {
     background: white;
-    border: 1px solid #ccc;
     color: black;
-}
-
-.google-login:hover {
-    background: #f5f5f5;
-}
-
-/*----------- forgot-password-box -----*/
-
-.forgot-password-box {
-    flex: 1;
-    padding: 40px;
+    border: 1px solid #ddd;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.forgot-password-box h2 {
-    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
     margin-bottom: 10px;
 }
 
-.forgot-password-box p {
-    font-size: 14px;
-    margin-bottom: 20px;
+.google-login img {
+    width: 18px;
+    margin-left: 8px;
 }
 
-.forgot-password-box a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 20px 0 40px;
-}
-
-.forgot-password-box a:hover {
-    text-decoration: underline;
-}
-
-/* Input và button */
-.forgot-password-box input {
-    width: 95%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* ----reset-password-box--------- */
-
-.reset-password-box {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: space-between;
-}
-
-.reset-password-box h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.reset-password-box p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.reset-password-box a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 20px 0 40px;
-}
-
-.reset-password-box a:hover {
-    text-decoration: underline;
-}
-
-/* Input và button */
-.reset-password-box input {
-    width: 95%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
 .footer {
     text-align: center;
-    margin-top: 60px; /* Đẩy footer xuống đáy */
+    margin-top: 60px; 
+}
+
+.password-container {
+    position: relative;
+    width: 88%;
+    margin: 0 0 10px;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; /* Chừa khoảng trống cho icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.eye-icon {
+    position: absolute;
+    top: 50%;
+    right: -35px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.eye-icon img {
+    width: 20px;
+    height: 20px;
 }

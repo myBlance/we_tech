@@ -19,3 +19,19 @@ function showResetPasswordForm(event) {
     document.getElementById("forgot-password-box").style.display = "none"; // Ẩn form quên mật khẩu
     document.getElementById("reset-password-box").style.display = "block"; // Hiện form đổi mật khẩu
 }
+
+
+
+function togglePassword() {
+    const passwordInput = document.getElementById("password");
+    const eyeIcon = document.getElementById("eye-icon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.src = "/assets/images/eye.png"; // Icon mắt nhắm
+    } else {
+        passwordInput.type = "password";
+       
+        eyeIcon.src = "/assets/images/eyeclose.png"; // Icon mắt mở
+    }
+}
